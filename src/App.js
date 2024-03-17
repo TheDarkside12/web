@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="App">
     <Router>
-      <Routes>
+      <Routes basename="/web">
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
         <Route path="/foodcourt" element={<FoodCourt />} />

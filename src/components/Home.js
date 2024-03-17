@@ -28,36 +28,7 @@ const Home = () => {
                 <div  className="quote p-1">Revamp. Restock. Recharge.</div>
                 <button className='home-button '><span className='btn-text'>Check Here!</span> </button>
                 </Col>
-                <Col>
-                <Row className="justify-content-start">
-    <Col xs={12} sm={10} md={8} lg={6} className='p-2'>
-        <Carousel className=' h-100' interval={null} fade activeIndex={activeIndex} onSelect={handleSelect} indicators={false}>
-            <Carousel.Item className='h-50'>
-                <Col className='d-flex justify-content-center align-items-center h-100'>
-                    <Card className='c-body'>
-                        <Card.Body className='c-body'>
-                            <div className=" d-flex align-items-center justify-content-center" style={{ height: '60px' }}>
-                                <img className='' src='images/breakfast.png' alt='Breakfast' />
-                                <div className=''>
-                                    <Card.Title>Breakfast</Card.Title>
-                                    <Card.Text>special items added..</Card.Text>
-                                    <Card.Text>available only on 10-03-2024</Card.Text>
-                                </div>
-                            </div>
-                            <div className=" d-flex align-items-center justify-content-center" style={{ height: '60px' }}>
-                                <img className="" src='images/breakfast.png' alt='Breakfast' />
-                                <div className=''>
-                                    <Card.Title>Buy One, Get One Free!</Card.Title>
-                                    <Card.Text>Purchase any ruler and get another one free. Limited time offer.</Card.Text>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Carousel.Item>
-        </Carousel>
-    </Col>
-</Row>        
+                <Col>       
                 </Col>
                 
             </Col>

@@ -1,0 +1,131 @@
+$celestial: linear-gradient(90deg, #131038 0.11%, #000 100%);
+$primary: black;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 890px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+@mixin gradient-text($start-color, $end-color) {
+    background-image: linear-gradient(to right, $start-color, $end-color);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .my-gradient-text {
+    @include gradient-text(#FFF500,#FFDF39);
+  }
+ 
+.primary {
+    background: $celestial;
+}
+
+.main-text{
+    color: #FFF;
+    font-family: 'Poppins-Italic',sans-serif;
+    font-size: 52px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.sub-text{
+    color: #FFF;
+    font-family: 'Poppins-Regular';
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.quote{
+    color: #FFDF39;
+    font-family: 'Poppins';
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.home-button{
+    background-color: transparent;
+    display: flex;
+    width: 421px;
+    padding: 10px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid #FFF;
+}
+.btn-text{
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.main-grid{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-box{
+   margin:0;
+   padding: 50px;
+   display: flex;
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: 0;
+}
+.home-img{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30rem;
+    height: 30rem;
+    flex-shrink: 0;
+    border-radius: 30rem;
+    border:#FFF;
+    border-radius: 480px;
+    
+}
+
+.active-link {
+    text-decoration: underline;
+    color:white;
+}  
+
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adjust the width as needed */
+  }
+  .card-img{
+    width: 200px;
+  }
+  .c-body{
+    max-height: 100px ;
+    font-family: "Poppins";
+  }
+
+  .c-Title{
+    font-size: 16px;
+  }
+
+.off{
+    position: absolute;
+    bottom:50px;
+    right:50px;
+}
+  
+@import "../node_modules/bootstrap/scss/bootstrap"

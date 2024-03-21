@@ -187,7 +187,7 @@ export default function Basic() {
                           >
                             PROCEED !
                           </button>
-                          <BillComponent className="justify-content-center" cartItems={cartItems} totalPrice={totalPrice} />
+                          {/* <BillComponent className="justify-content-center" cartItems={cartItems} totalPrice={totalPrice} /> */}
                           </div>
                         </CardBody>
                       </Card>

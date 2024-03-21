@@ -74,7 +74,9 @@ const Saloon = () => {
                                             <Col className='card-image' xs={4}>
                                                 <Card.Img fluid className='' src={item.imagePath} />
                                             </Col>
-                            <button
+                            
+                                        </Row>
+                                        <button
                                 onClick={() => {
                                     handleIncrement(item.id, category);
                                     handleProceed();
@@ -92,7 +94,6 @@ const Saloon = () => {
                                 fontSize: '30px',
                                 fontWeight: 'bolder'
                                 }}>+</button>
-                                        </Row>
                                     </Card>
                                 </Col>
                             ))}

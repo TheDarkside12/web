@@ -77,7 +77,7 @@ const Store = () => {
                 <Col key={item.id}>
                   <Card className='c-body h-100 justify-content-center align-items-center'>
                     <Row xs={2} className="g-0 justify-content-center align-items-center">
-                      <Col className='' xs={8}>
+                      <Col className='justify-self-start' xs={8}>
                         <Card.Body className='c-body'>
                           <Card.Title>{item.itemName}</Card.Title>
                           <Card.Text>{item.description}</Card.Text>

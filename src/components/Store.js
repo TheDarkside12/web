@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { getFirestore, doc, updateDoc } from 'firebase/firestore'; // Import necessary Firestore functions
 import firebaseApp from './FirebaseConfig';
 import { getDocs, collection } from 'firebase/firestore';
 import AppBar from './AppBar';
 
 const Store = () => {
-  const [show, setShow] = useState(false);
   const [items, setItems] = useState({});
   const [cartItems, setCartItems] = useState([]);
 
@@ -70,14 +69,16 @@ const Store = () => {
                       <Col className='card-image' xs={4}>
                         <Card.Img fluid src={item.imagePath} />
                       </Col>
-                      <button
+                      
+                    </Row>
+                    <button
                         onClick={() => handleIncrement(item.id, category)}
                         style={{
                           position: 'absolute',
-                          bottom: '5%',
-                          right: '15%',
-                          padding: '5px 10px',
-                          borderRadius: '10px 0px 10px 0px',
+                          bottom: '0%',
+                          right: '0%',
+                          padding: '10px 20px',
+                          borderRadius: '5px',
                           backgroundColor: 'rgba(255, 255, 255, 0.8)',
                           color: 'black',
                           border: 'none',
@@ -85,7 +86,6 @@ const Store = () => {
                           fontSize: '30px',
                           fontWeight: 'bolder'
                         }}>+</button>
-                    </Row>
                   </Card>
                 </Col>
               ))}

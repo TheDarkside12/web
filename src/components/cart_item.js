@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
 import { addProductToCart } from './addproducttocart'; 
 import CartProduct from './cartProduct';
 import { Container, Row, Col, Card, Button, CardBody } from 'react-bootstrap';
@@ -16,17 +15,17 @@ const CartItem = ({ id, initialQuantity, onDelete, updateTotalPrice, setItems, c
   
   const handleDecrease = () => {
     if (itemQuantity > 1) {
-      setItemQuantity(prevQuantity => prevQuantity - 1); // Decrement item quantity
-      addProductToCart(id, -1, collectionName); // Update quantity in Firestore
-      setItems(id, -1); // Update local state
-      updateTotalPrice(); // Recalculate total price
+      setItemQuantity(prevQuantity => prevQuantity - 1); 
+      addProductToCart(id, -1, collectionName); 
+      setItems(id, -1); 
+      updateTotalPrice(); 
     }
   };
 
   const handleDelete = () => {
     if (itemQuantity > 0) {
-      onDelete(id); // Call the delete function with the id of the item to be deleted
-      addProductToCart(id, -itemQuantity, collectionName); // Subtract itemQuantity from the quantity of the product with this id in Firestore
+      onDelete(id); 
+      addProductToCart(id, -itemQuantity, collectionName); 
     }
   };
 
@@ -39,9 +38,9 @@ const CartItem = ({ id, initialQuantity, onDelete, updateTotalPrice, setItems, c
             <CartProduct id={id} collectionName={collectionName} />
             </Col>
             <Col xs={3}>
-              <Button>-</Button>
+              <Button onClick={handleDecrease}>-</Button>
               <span className="mx-2">{itemQuantity}</span>
-              <Button>+</Button>
+              <Button onClick={handleIncrease}>+</Button>
             </Col>
             <Col xs={2}>
                <img

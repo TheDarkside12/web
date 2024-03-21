@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import QRCode from "react-qr-code";
-import { useNavigate } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { getFirestore } from 'firebase/firestore'; // Import necessary Firestore functions
 import firebaseApp from './FirebaseConfig';
 import BillComponent from "./bill";
 import CartItem from "./cart_item";
 import AppBar from "./AppBar";
-import { Container, Row, Col, Card, Button, CardBody } from 'react-bootstrap';
+import { Container, Row, Col, Card, CardBody } from 'react-bootstrap';
 import SuccessPopup from './SuccessPopup';
 
 export default function Basic() {
@@ -54,11 +53,11 @@ export default function Basic() {
   const calculateTotalPrice = (items) => {
     let total = 0;
 
-    // Check if items is defined and is an array
+    
     if (Array.isArray(items)) {
-      // Iterate over each item and accumulate the total price
+      
       items.forEach((item) => {
-        // Check if quantity and price are valid numbers
+        
         if (typeof item.quantity === 'number' && typeof item.price === 'number') {
           total += item.quantity * item.price;
         } else {
@@ -69,15 +68,15 @@ export default function Basic() {
       console.error('Items is not a valid array:', items);
     }
 
-    // Update the total price state
+    
     setTotalPrice(total);
   };
 
   const deleteCartItem = async (itemId) => {
     try {
-      // Remove item from UI
+      
       setCartItems(cartItems.filter((item) => item.id !== itemId));
-      // Recalculate total price after removing item
+      
       calculateTotalPrice(cartItems.filter(item => item.id !== itemId));
     } catch (error) {
       console.error("Error deleting item:", error);
@@ -95,7 +94,11 @@ export default function Basic() {
       item.id === itemId ? { ...item, quantity: item.quantity + quantityChange } : item
     ));
   };
-
+  const updateTotalPrice =  () => {
+    calculateTotalPrice(cartItems);
+    calculateTotalPrice(cartItems);
+  };
+  
   const [showPopup, setShowPopup] = useState(false); // State variable to manage popup visibility
     const [successMessage, setSuccessMessage] = useState(''); // State variable to manage success message
 
@@ -132,12 +135,12 @@ export default function Basic() {
                       {cartItems.map((item) => (
                         item.quantity > 0 && (
                           <Row key={item.id}>
-                            <Col >
-                              <CartItem
+                            <Col className="mb-3" >
+                              <CartItem className="mb-3"
                                 id={item.id}
                                 initialQuantity={item.quantity}
                                 onDelete={deleteCartItem}
-                                updateTotalPrice={calculateTotalPrice}
+                                updateTotalPrice={updateTotalPrice}
                                 setItems={setItems}
                                 collectionName={item.collectionName} // Pass collectionName
                               />
@@ -148,39 +151,44 @@ export default function Basic() {
                     </Container>
                   </Col>
                   <Col >
-                    <Container>
-                      <Card style={{ background: "orange" }}>
+                    <Container style={{maxWidth:'500px'}}>
+                      <Card style={{ background: "linear-gradient(to right , #FFF500,#FFDF39)" }}>
                         <CardBody>
-                          <div className="d-flex justify-content-between align-items-center mb-4">
-                            <div tag="h5" className="mb-0">
-                              Amount (Id)
+                          <div className="d-flex justify-content-center align-items-center mb-4">
+                            <div tag="h1 fw-bold" className="">
+                              AMOUNT
                             </div>
                             <p></p>
                           </div>
-                          <p className="small">Scan to pay</p>
+                          <p className="small d-flex justify-content-center">Scan to pay</p>
+                          <div className="d-flex justify-content-center align-items-center">
                           {showQRCode && (
-                            <QRCode
+                            <QRCode className="justify-self-center align-items-center"
                               title="SECE PAYMENT"
-                              value={`upi://pay?pa=jaiguru2992@okhdfcbank&pn=Jai%20guru&am=${totalPrice}.00&cu=INR&aid=uGICAgMDE16mMcg`}
+                              value={`upi://pay?pa=sivanithishkumar12@oksbi&pn=Siva D. Nithish&am=${totalPrice}.00&cu=INR&aid=uGICAgIC36tTscg.00`}
                               style={{ padding: "5px" }}
                             />
                           )}
+                          </div>
+                          
                           <hr />
-                          <div className="d-flex justify-content-between">
-                            <p className="mb-2">Total</p>
-                            <p className="mb-2">INR {totalPrice}/-</p>
+                          <div className="d-flex justify-content-center align-items-center " style={{flexDirection:'column'}}>
+                          <div className="d-flex justify-content-center">
+                            <p className="mb-2 h3">Total &nbsp;</p>
+                            <p className="mb-2 h3">INR {totalPrice}/-</p>
                           </div>
                           <button
                             color="info"
                             variant="warning"
                             block
                             size="lg"
-                            className="btn btn-primary"
+                            className="btn justify-content-center btn-primary"
                             onClick={handleProceed}
                           >
                             PROCEED !
                           </button>
-                          <BillComponent cartItems={cartItems} totalPrice={totalPrice} />
+                          <BillComponent className="justify-content-center" cartItems={cartItems} totalPrice={totalPrice} />
+                          </div>
                         </CardBody>
                       </Card>
                     </Container>

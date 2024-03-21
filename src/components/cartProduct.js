@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from './FirebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card} from 'react-bootstrap';
 
 const CartProduct = ({ id, collectionName }) => {
   const [product, setProduct] = useState(null);

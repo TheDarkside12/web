@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { getFirestore, collection, getDocs, doc, updateDoc } from 'firebase/firestore';
 import firebaseApp from './FirebaseConfig';
 import AppBar from './AppBar';

@@ -4,17 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AppBar from './AppBar'
 import Image from 'react-bootstrap/Image';
-import Carousel from 'react-bootstrap/Carousel';
-import { useState } from 'react';
-import { Card } from 'react-bootstrap';
 
 const Home = () => {
 
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    const handleSelect = (selectedIndex) => {
-      setActiveIndex(selectedIndex);
-    };
+    
 
   return (
     <Container style={{ minWidth: '500px' }} fluid className='primary m-0 p-0 vh-100 vw-120 position-relative'>
@@ -33,7 +26,7 @@ const Home = () => {
                 
             </Col>
             <Col className='d-none  d-md-block home-img'>
-                <Image className='home-img' src='/images/restaurant.jpeg' />
+                <Image className='' src='/images/sketchbook.jpg' />
 
             </Col>
         </Row>

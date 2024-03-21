@@ -54,7 +54,7 @@ const BillComponent = ({ cartItems, totalPrice }) => {
   };
   
   return (
-    <div>
+    <div className="d-flex justify-content-center align-items-center" style={{flexDirection:"column"}}>
       <h1>Your Bill</h1>
       <button onClick={generateBill}>Generate Bill</button>
     </div>

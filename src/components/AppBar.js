@@ -5,7 +5,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 const AppBar = () => {
-  const location = useLocation();
 
   return (
     <Navbar expand="xl" >

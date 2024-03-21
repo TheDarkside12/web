@@ -44,7 +44,7 @@ const CartItem = ({ id, initialQuantity, onDelete, updateTotalPrice, setItems, c
             </Col>
             <Col xs={2}>
                <img
-                 src={'https://cdn-icons-png.flaticon.com/512/6861/6861362.png'}
+                 src={'https://cdn-icons-png.flaticon.com/128/1214/1214428.png'}
                  alt="Delete"
                  style={{ cursor: 'pointer', height: '32px', marginLeft: '20px' }}
                  onClick={handleDelete} // Call handleDelete function when clicked

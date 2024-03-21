@@ -4,7 +4,7 @@ import QRCode from "react-qr-code";
 import { collection, getDocs } from "firebase/firestore";
 import { getFirestore } from 'firebase/firestore'; // Import necessary Firestore functions
 import firebaseApp from './FirebaseConfig';
-import BillComponent from "./bill";
+// import BillComponent from "./bill";
 import CartItem from "./cart_item";
 import AppBar from "./AppBar";
 import { Container, Row, Col, Card, CardBody } from 'react-bootstrap';
